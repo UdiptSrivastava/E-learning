@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><title>Java Tutorial</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C++, jQuery, Bootstrap, C#, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Courses, Lessons, References, Examples, Source code, Demos, Tips">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
+
+<link rel="stylesheet" href="{{ url_for('static',filename='java/css/style.css') }}" rel="stylesheet">
+
+<script src="{{ url_for('static',filename='java/js/java.js') }}"></script>
+
+</head>
+<body>
+
+<div class="w3-bar w3-card-2 notranslate" style="position: relative;z-index: 4;font-size: 18px;background-color: white;color:#282A35;padding-left:12px;padding-right:16px;font-family: 'Source Sans Pro', sans-serif;">
+{% set img = 'profile/'+session['img'] %}
+<img alt="image" class="rounded-circle" src="{{ url_for('static',filename=img)}}" width="50px" height="50px" style="float: right;margin-top: 10px;" />
+
+  <p style="float: right;padding: 10px;font-family: cursive;font-weight: bold;">Username : <span>{{session['uid']}}</span></p>
+
+  <p style="float: right;padding: 10px;font-family: cursive;font-weight: bold;">Email : {{session['uid']}}</p>
+  
+  <a class="w3-bar-item w3-button w3-hide-small barex bar-item-hover w3-padding-24" href="/student" style="width:116px">Home</a>
+  <a class="w3-bar-item w3-button w3-hide-small barex bar-item-hover w3-padding-24" href="/test/{{session['code']}}" style="width:132px">Skill Test</a>
+  
+
+  <div id="loginactioncontainer" class="w3-right w3-padding-16" style="margin-left:50px">
+
+  <div class="w3-right w3-padding-16">
+   
+  </div>
+  
+</div>
+
+<div style='display:none;position:absolute;z-index:4;right:52px;height:44px;background-color:#282A35;letter-spacing:normal;' id='googleSearch'>
+  <div class='gcse-search'></div>
+</div>
+<div style='display:none;position:absolute;z-index:3;right:111px;height:44px;background-color:#282A35;text-align:right;padding-top:9px;' id='google_translate_element'></div>
+
+
+    
+
+
+
+
+
+ <br class="hidesm">
+ </div>
+
+
+  </div>
+</div>
+
+<div id='myAccordion' class="w3-card-2 w3-center w3-hide-large w3-hide-medium" style="width:100%;position:absolute;display:none;background-color:#E7E9EB">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-xxlarge w3-right">&times;</a><br>
+  <div class="w3-container w3-padding-32"> 
+   
+    <div id="sectionxs_tutorials" class="w3-left-align w3-show" style="background-color:#282A35;color:white;"></div>
+
+  </div>
+</div>
+
+<script>
+
+</script>
+
+
+<div style="background-color:#E7E9EB;" class='w3-sidebar w3-collapse' id='sidenav'>
+  <div id='leftmenuinner' style="background-color:#E7E9EB;">
+    <div id='leftmenuinnerinner' style="background-color:#E7E9EB;">
+<!--  <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>-->
+<h2 class="left"><span class="left_h2">Java</span> Tutorial</h2>
+<a target="_top" href="/java/{{0}}">Java HOME</a>
+<a target="_top" href="/java/{{1}}">Get Started</a>
+<a target="_top" href="/java/{{2}}">Java Syntax</a>
+<a target="_top" href="/java/{{3}}">Java Variables</a>
+<a target="_top" href="/java/{{4}}">Java Datatypes</a>
+<br>
+
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class='w3-main w3-light-grey' id='belowtopnav' style='margin-left:280px;width: 90%'>
+  <div class='w3-row w3-white'>
+    <div class='w3-col l10 m12' id='main'>
+ <div class="w3-panel w3-info intro">
+                    {% block body %}
+
+                    {% endblock %}
+</div>
+
+<hr>

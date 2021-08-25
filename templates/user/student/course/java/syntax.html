@@ -1,0 +1,85 @@
+{% extends 'user/student/course/java/layout.html' %}
+{% block body %} 
+<h2>Java Syntax</h2>
+
+<p>In the previous chapter, we created a Java file called <code class="w3-codespan">Main.java</code>, and we used the following code to print "Hello World" to the screen:</p>
+
+<div class="w3-example">
+<p>Main.java</p>
+<pre class="language-java w3-white"><code>public class Main {
+&nbsp; public static void main(String[] args) {
+&nbsp;&nbsp;&nbsp; System.out.println(&quot;Hello World&quot;);
+&nbsp; }
+}
+</code></pre>
+
+</div>
+
+<h3>Example explained</h3>
+
+<p>Every line of code that runs in Java must be inside a <code class="w3-codespan">class</code>.
+In our example, we named the class <strong>Main</strong>. A class should always start with 
+an uppercase first letter.</p>
+<p><strong>Note:</strong> Java is case-sensitive: &quot;MyClass&quot; and &quot;myclass&quot; has 
+different meaning.</p>
+<p>The name of the java file <strong>must match</strong> the class name.
+When saving the file, save it using the class name and add &quot;.java&quot; to the end of 
+the filename. To run the example above on your computer, make sure that Java is 
+properly installed: Go to the <a href="java_getstarted.asp">Get Started Chapter</a> for how to install Java. The output should be:</p>
+<div class="w3-example w3-padding-16">
+<div class="notranslate w3-black w3-padding">
+<code class="notranslate">
+Hello World
+</code>
+</div>
+</div>
+
+<hr>
+
+<h2>The main Method</h2>
+<p>The <code class="w3-codespan">main()</code> method is required and you will 
+see it in every Java 
+program:</p>
+<div class="w3-example">
+<pre class="language-java w3-white"><code>public static void <strong>main</strong>(String[] args)
+</code></pre>
+</div>
+<p>Any code inside the <code class="w3-codespan">main()</code> method will be executed. You don't have to understand the keywords before and after main. You will get to know 
+them bit by bit while reading this tutorial.</p>
+<p>For now, just remember that every Java program has a <code class="w3-codespan">class</code> name which 
+must match the filename, and that every program must contain the 
+<code class="w3-codespan">main()</code> method.</p>
+<!--
+<p>We will use them in almost all of our examples, and you will get to know them bit by bit while reading this tutorial.</p>
+<p>However, if you want to get to know them right away:</p>
+<ul>
+<li><code class="w3-codespan">public</code> - anyone can access it</li>
+<li><code class="w3-codespan">static</code> - method can be run without creating an 
+object of the class containing the main method</li>
+<li><code class="w3-codespan">void</code> - method doesn't return any value</li>
+<li><code class="w3-codespan">main</code> - the name of the method</li>
+<li>The main method's parameters are declared inside the parentheses (String[] args). You will learn more about these in a later chapter.</li>
+</ul>
+-->
+<hr>
+
+<h2>System.out.println()</h2>
+<p>Inside the <code class="w3-codespan">main()</code> method, we can use the <code class="w3-codespan">println()</code> 
+method to print a line of text to the screen:</p>
+<div class="w3-example">
+<pre class="language-java w3-white"><code>public static void main(String[] args) {
+&nbsp; <strong>System.out.println(&quot;Hello World&quot;);</strong>
+}
+</code></pre>
+<p>
+</div>
+<div class="w3-note w3-panel">
+<p><strong>Note:</strong> The curly braces <code class="w3-codespan">{}</code> marks the beginning and the end of a block of code.</p>
+
+<p><strong>Note:</strong> Each code statement must end with a semicolon.</p></div>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="/java/{{1}}">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="/java/{{3}}">Next &#10095;</a>
+</div>
+
+{% endblock %}

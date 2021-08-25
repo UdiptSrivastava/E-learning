@@ -1,0 +1,13 @@
+{
+  "params":
+  {
+    "company": "Global Institute of Computer Science and Technology",
+    "year": "2006",
+    "local_url": "mysql://root:@localhost/smartedu",
+    "cv_path": "static\\cv",
+    "dp_path": "static\\profile",
+    "email": "elearningskiltest@gmail.com",
+    "password": "Lucknow1@3"
+
+  }
+}

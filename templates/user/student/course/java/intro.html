@@ -1,0 +1,177 @@
+{% extends 'user/student/course/java/layout.html' %}
+{% block body %}
+
+
+<h2>Java Install</h2>
+
+<p>Some PCs might have Java already installed.</p>
+
+<p>To check if you have Java installed on a Windows PC, search in the start bar for Java or type the following in Command Prompt (cmd.exe):</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;java -version
+</div>
+</div>
+
+<p>If Java is installed, you will see something like this (depending on version):</p>
+<div class="w3-example w3-padding-16">
+<div class="notranslate w3-black w3-padding">
+<code>
+java version "11.0.1" 2018-10-16 LTS<br>
+Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)<br>
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
+</code>
+</div>
+</div>
+
+<p>If you do not have Java installed on your computer, you can download it for free at <a href="https://www.oracle.com/technetwork/java/javase/overview/index.html" target="_blank">oracle.com</a>.</p>
+
+<p><strong>Note:</strong> In this tutorial, we will write Java code in a text editor. However, it is possible to write Java in an Integrated Development Environment, such as IntelliJ IDEA, Netbeans or Eclipse, which are particularly useful when managing larger collections of Java files.</p>
+<hr>
+
+<h2>Setup for Windows</h2>
+<p>To install Java on Windows:</p>
+
+<ol>
+<li>Go to &quot;System Properties&quot; (Can be found on Control Panel &gt; 
+System and Security &gt; System &gt; Advanced System Settings)</li>
+<li>Click on the &quot;Environment variables&quot; button under the &quot;Advanced&quot; tab</li>
+<li>Then, select the &quot;Path&quot; variable in System variables and click on the &quot;Edit&quot; 
+button</li>
+  <li>Click on the &quot;New&quot; button and add the path where Java is installed, 
+  followed by <strong>\bin</strong>. By default, Java is installed in C:\Program 
+  Files\Java\jdk-11.0.1 (If nothing else was specified when you installed it). 
+  In that case, You will have to add a new path with: <strong>C:\Program 
+  Files\Java\jdk-11.0.1\bin </strong><br>
+  Then, click &quot;OK&quot;, and save the settings</li>
+  <li>At last, open Command Prompt (cmd.exe) and type <strong>java -version</strong> to see if Java is 
+  running on your machine</li>
+</ol>
+<!--
+<button onclick="myAccFunction1('DemoAcc')" class="w3-btn w3-block w3-dark-grey w3-left-align xx w3-border-bottom">Show how to install Java step-by-step with images &raquo;</button>
+<div id="DemoAcc" class="w3-light-grey w3-padding-16 w3-container">
+<h2 style="margin-top:0">Step 1</h2>
+<img src="system.png" class="w3-image">
+</div>
+-->
+<button onclick="myAccFunction('DemoAcc')" class="w3-btn w3-block w3-left-align xx w3-border-bottom">Show how to install Java step-by-step with images &raquo;</button>
+<div id="DemoAcc" class="w3-hide ws-grey w3-padding-16 w3-container">
+<h2 style="margin-top:0">Step 1</h2>
+<img src="{{ url_for('static',filename='java/image/system.png') }}" class="w3-image">
+</div>
+
+<button onclick="myAccFunction('DemoAcc2')" class="w3-btn w3-block w3-left-align xx w3-border-bottom">Step 2 &raquo;</button>
+<div id="DemoAcc2" class="w3-hide ws-grey w3-padding-16 w3-container">
+<h2 style="margin-top:0">Step 2</h2>
+<img src="{{ url_for('static',filename='java/image/system1.png') }}" class="w3-image">
+</div>
+<button onclick="myAccFunction('DemoAcc3')" class="w3-btn w3-block w3-left-align xx w3-border-bottom">Step 3 &raquo;</button>
+<div id="DemoAcc3" class="w3-hide ws-grey w3-padding-16 w3-container">
+<h2 style="margin-top:0">Step 3</h2>
+<img src="{{ url_for('static',filename='java/image/path2.png') }}" class="w3-image">
+</div>
+<button onclick="myAccFunction('DemoAcc4')" class="w3-btn w3-block w3-left-align xx w3-border-bottom">Step 4 &raquo;</button>
+<div id="DemoAcc4" class="w3-hide ws-grey w3-padding-16 w3-container">
+
+<h2 style="margin-top:0">Step 4</h2>
+<img src="{{ url_for('static',filename='java/image/path3.png') }}" class="w3-image">
+</div>
+<button onclick="myAccFunction('DemoAcc5')" class="w3-btn w3-block w3-left-align xx w3-border-bottom">Step 5 &raquo;</button>
+<div id="DemoAcc5" class="w3-hide w3-light-grey w3-padding-16 w3-container">
+
+<h2 style="margin-top:0">Step 5</h2>
+<p>Write the following in the command line (cmd.exe):</p>
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;java -version
+</div>
+<p>If Java was successfully installed, you will see something like this (depending on version):</p>
+<div class="w3-code notranslate w3-black">
+java version "11.0.1" 2018-10-16 LTS<br>
+Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)<br>
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
+</div>
+
+</div>
+
+<script>
+function myAccFunction1(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-hide") == -1) {
+        x.className += " w3-hide";
+        x.previousElementSibling.className = 
+  x.previousElementSibling.className.replace("ws-black", "");
+   } else { 
+        x.className = x.className.replace(" w3-hide", "");
+         x.previousElementSibling.className += " ws-black";
+    }
+}
+</script>
+
+
+<script>
+function myAccFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+         x.previousElementSibling.className += " ws-black";
+   } else { 
+        x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+  x.previousElementSibling.className.replace("ws-black", "");
+  }
+}
+</script>
+
+<h2>Java Quickstart</h2>
+<p>In Java, every application begins with a class name, and that class must match the filename.</p>
+<p>Let's create our first Java file, called Main.java, which can be done in any text editor 
+(like Notepad).</p>
+<p>The file should contain a &quot;Hello World&quot; message, which is written with the 
+following code:</p>
+
+<div class="w3-example" style="border: 1px solid green;">
+<p>Main.java</p>
+<pre class="language-java w3-white"><code>public class Main {
+&nbsp; public static void main(String[] args) {
+&nbsp;&nbsp;&nbsp; System.out.println(&quot;Hello World&quot;);
+&nbsp; }
+}
+</code></pre>
+
+</div>
+
+<p>Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. 
+For now, focus on <strong>how</strong> to run the code above.</p>
+<p>Save the code in Notepad as "Main.java". Open Command Prompt (cmd.exe), navigate to the directory where you saved your file, and type "javac 
+Main.java":</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;javac Main.java
+</div>
+</div>
+<p>This will compile your code. If there are no errors in the code, the command prompt will take you to the next line. 
+Now, type "java Main" to run the file:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;java Main
+</div>
+</div>
+
+<p>The output should read:</p>
+<div class="w3-example w3-padding-16">
+<div class="notranslate w3-black w3-padding">
+<code class="notranslate">
+Hello World
+</code>
+</div>
+
+</div>
+
+<p><strong>Congratulations!</strong> You have written and executed your first Java program.</p>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="/java/{{0}}">&#10094;Previous</a>
+<a class="w3-right w3-btn" href="/java/{{2}}">Next &#10095;</a>
+</div>
+{% endblock %}

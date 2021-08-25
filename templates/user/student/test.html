@@ -1,0 +1,121 @@
+{% extends 'user/student/layout.html' %}
+{% block body %} 
+<style>
+        #autoresizing {
+            display: block;
+            overflow: hidden;
+            resize: none;
+        }
+    </style>
+  <div class="row">
+<div class="col-lg-12">
+    <div class="ibox ">
+        <div class="ibox-title">
+           
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#" class="dropdown-item">Config option 1</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Config option 2</a>
+                    </li>
+                </ul>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div id="countdown"></div>
+            <form name="form" id="myform" method="post"  action="/test/{{session['code']}}">
+                {% for x in data %}
+                <h5> Question {{loop.index}}:</h5>
+                <div class="form-group row" style="margin-left: 3px">
+  
+                                    <textarea   style="height: 250px;width: 80%;background-color: rgb(232,232,232);border-radius: 2px 2px 2px 2px;border:1px solid rgb(200,200,200);" id="autoresizing" name="ques" type="text" class="form-control required email" readonly="" 
+                                    >{{x.ques}}</textarea></div>
+
+              <div class="form-group row"  style="margin-left: 3px">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-6 i-checks" >
+                                        <label for="exampleInputEmail1">A</label>
+                                        <input type="radio" id="op1" name="{{x.sno}}" value="a"/>&nbsp;&nbsp;{{x.option1}}
+                                    </div>
+                                    <div class="col-md-6 i-checks">
+                                        <label for="exampleInputEmail1">B</label>
+                                        <input type="radio" id="op1" name="{{x.sno}}" value="b"/>&nbsp;&nbsp;{{x.option2}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="form-group row"  style="margin-left: 3px">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-6 i-checks">
+                                        <label for="exampleInputEmail1">C</label>
+                                        <input type="radio" id="op1" name="{{x.sno}}" value="c"/>&nbsp;&nbsp;{{x.option3}}
+                                    </div>
+                                    <div class="col-md-6 i-checks">
+                                        <label for="exampleInputEmail1">D</label>
+                                        <input type="radio" id="op1" name="{{x.sno}}" value="d"/>&nbsp;&nbsp;{{x.option4}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                         <input type="radio" checked='checked' style='display:none' value="nil" id='radio1_{{x.sno}}' name='{{x.sno}}'/>
+                        
+                        <hr>
+                    
+                
+                {% endfor %}
+                
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+                    </div>
+                </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="{{ url_for('static',filename='admin/js/autosize.js')}}"></script>
+
+<script>
+        autosize(document.querySelectorAll('textarea'));
+</script>
+<script>
+var timeleft = 20;
+var m=0;
+var s=20;
+
+var downloadTimer = setInterval(function(){
+
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("myform").submit();
+    //window.location="../../Includes/Action/Student_Action.php?pid=7";
+  } else {
+    document.getElementById("countdown").innerHTML = m+" : "+s + " seconds remaining";
+  }
+  timeleft -= 1;
+  s -=1
+  if(s==0 && m>0)
+  {
+    s=60;
+    m-=1;
+  }
+  
+}, 1000);
+</script>
+{% endblock %}
